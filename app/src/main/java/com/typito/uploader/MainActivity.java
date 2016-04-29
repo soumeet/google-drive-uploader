@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.media.ThumbnailUtils;
 import android.net.Uri;
+import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -20,6 +21,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -35,9 +37,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public class RowAdapter extends ArrayAdapter<String> {
+//        HashMap<String, Bitmap> cacheBitmap = new HashMap<String, Bitmap>();
+//        String filePath = Environment.getExternalStorageDirectory();
         public RowAdapter(Context context, int resource, String[] objects) {
             super(context, resource, objects);
         }
+        /*private void initCacheBitmap() {
+            for(String string:names)
+                cacheBitmap.put(string, ThumbnailUtils.createVideoThumbnail(filePath+string, MediaStore.Video.Thumbnails.MICRO_KIND));
+        }*/
         public View getView(int position, View convertView, ViewGroup parent) {
             View row = convertView;
             if(row==null){
