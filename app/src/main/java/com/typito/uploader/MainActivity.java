@@ -38,11 +38,8 @@ public class MainActivity extends AppCompatActivity {
         videoFileList=t.toArray(new String[t.size()]);
         listView.setAdapter(new RowAdapter(MainActivity.this, R.layout.row, videoFileList));
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Toast.makeText(getApplicationContext(), "Row: "+adapterView.getItemAtPosition(i), Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(MainActivity.this, ChildActivity.class));
-                finish();
             }
         });
     }
