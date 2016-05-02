@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.IntentSender;
 import android.content.SharedPreferences;
 import android.database.Cursor;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Environment;
@@ -194,7 +195,7 @@ public class ChildActivity extends AppCompatActivity implements GoogleApiClient.
         Drive.DriveApi.newDriveContents(gApiClient).setResultCallback(driveContentsResultResultCallback);
     }
 
-    public class uploadTask extends AsyncTask<DriveContents, Integer, Void> {
+    /*public class uploadTask extends AsyncTask<DriveContents, Integer, Void> {
         protected void onPreExecute() {
             super.onPreExecute();
             Log.i(TAG, "uploadTask(): adding file to outputstream...");
@@ -228,7 +229,7 @@ public class ChildActivity extends AppCompatActivity implements GoogleApiClient.
             Log.i(TAG, "uploadTask(): adding file successful...");
             pb_progress.setVisibility(View.GONE);
         }
-    }
+    }*/
 
     final ResultCallback<DriveApi.DriveContentsResult> driveContentsResultResultCallback =
         new ResultCallback<DriveApi.DriveContentsResult>() {
@@ -282,7 +283,7 @@ public class ChildActivity extends AppCompatActivity implements GoogleApiClient.
             }
         };
 
-    final private ResultCallback<DriveFolder.DriveFileResult> fileResultResultCallback =
+    /*final private ResultCallback<DriveFolder.DriveFileResult> fileResultResultCallback =
         new ResultCallback<DriveFolder.DriveFileResult>() {
             public void onResult(DriveFolder.DriveFileResult result) {
                 if (!result.getStatus().isSuccess()) {
@@ -310,5 +311,5 @@ public class ChildActivity extends AppCompatActivity implements GoogleApiClient.
                     }
                 });
             }
-        };
+        };*/
 }
